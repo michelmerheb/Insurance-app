@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Animated,
+} from "react-native";
 import React from "react";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { ProgressBar } from "react-native-paper";
@@ -36,7 +42,7 @@ export default function CardComponent({
         <Text style={styles.policyNumber}>{policyNumber}</Text>
       </View>
       <ProgressBar
-        progress={progress}
+        animatedValue={progress}
         color={progressColor}
         style={styles.progressBar}
       />

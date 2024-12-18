@@ -145,7 +145,6 @@ export default function TabScreens({ navigation }: any) {
                 style={styles.optionButton}
                 onPress={() => {
                   closeModal();
-                  navigation.navigate("InjurySelector");
                 }}
               >
                 <Ionicons name="megaphone-outline" size={30} color="#fff" />
