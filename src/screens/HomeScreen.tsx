@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import CardComponent from "../components/CardComponent";
-import DonutChart from "../components/PieChart";
+import DonutChart from "../components/DonutChart";
 
 export default function HomeScreen() {
   return (
@@ -12,10 +12,10 @@ export default function HomeScreen() {
         detail="BMW 320"
         policyNumber="123567889"
         progress={0.8}
-        progressColor="#3498DB"
+        progressColor="#66a9c4"
         daysRemaining="265 Days remaining"
         buttonText="Upgrade"
-        buttonColor="#3498DB"
+        buttonColor="#66a9c4"
       />
 
       <CardComponent
@@ -23,7 +23,7 @@ export default function HomeScreen() {
         title="MY HEALTH INSURANCE"
         detail="Class B"
         policyNumber="353R3T5TT"
-        progress={0.1}
+        progress={0.9}
         progressColor="#F7B731"
         daysRemaining="20 Days remaining"
         buttonText="Renew"
@@ -35,7 +35,7 @@ export default function HomeScreen() {
         title="MY LIFE INSURANCE"
         detail="Class B"
         policyNumber="584624693"
-        progress={0.8}
+        progress={0.5}
         daysRemaining="300 Days remaining"
         buttonText="Upgrade"
       />

@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   remainingText: {
     fontSize: 14,
-    color: "#777",
+    color: "#000",
     marginBottom: 10,
   },
   button: {

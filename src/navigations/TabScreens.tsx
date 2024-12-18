@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Modal,
   Animated,
+  SafeAreaView,
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
@@ -24,7 +25,7 @@ const Tab = createBottomTabNavigator();
 
 const TabHeader = ({ title, navigation }: any) => {
   return (
-    <View style={styles.headerContainer}>
+    <SafeAreaView style={styles.headerContainer}>
       <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
         <AntDesign name="user" size={24} color="#fff" />
       </TouchableOpacity>
@@ -32,11 +33,11 @@ const TabHeader = ({ title, navigation }: any) => {
       <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
         <Ionicons name="notifications-outline" size={24} color="#fff" />
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default function TabScreens() {
+export default function TabScreens({ navigation }: any) {
   const [modalVisible, setModalVisible] = useState(false);
   const opacityAnim = useRef(new Animated.Value(0)).current;
   const translateYAnim = useRef(new Animated.Value(50)).current;
@@ -142,7 +143,10 @@ export default function TabScreens() {
             <View style={styles.optionButtonContainer}>
               <TouchableOpacity
                 style={styles.optionButton}
-                onPress={closeModal}
+                onPress={() => {
+                  closeModal();
+                  navigation.navigate("InjurySelector");
+                }}
               >
                 <Ionicons name="megaphone-outline" size={30} color="#fff" />
               </TouchableOpacity>
@@ -152,7 +156,9 @@ export default function TabScreens() {
             <View style={styles.optionButtonContainer}>
               <TouchableOpacity
                 style={styles.optionButton}
-                onPress={closeModal}
+                onPress={() => {
+                  closeModal();
+                }}
               >
                 <Feather name="shopping-cart" size={30} color="#fff" />
               </TouchableOpacity>
@@ -172,12 +178,12 @@ export default function TabScreens() {
 const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: "#3691f5",
-    paddingTop: 50,
+    paddingTop: 20,
     paddingBottom: 15,
     paddingHorizontal: 20,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-end",
   },
   headerTitle: {
     fontSize: 20,
