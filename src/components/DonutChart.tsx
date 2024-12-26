@@ -46,19 +46,31 @@ export default function DonutChart() {
             <View
               style={[styles.legendColor, { backgroundColor: "#66a9c4" }]}
             />
-            <Text style={styles.legendText}>Car insurance</Text>
+            <Text style={[styles.legendText, { color: "#66a9c4" }]}>
+              Car insurance
+            </Text>
           </View>
           <View style={styles.legendItem}>
             <View
               style={[styles.legendColor, { backgroundColor: "#F7B731" }]}
             />
-            <Text style={styles.legendText}>Health insurance</Text>
+            <Text style={[styles.legendText, { color: "#F7B731" }]}>
+              Health insurance
+            </Text>
           </View>
           <View style={styles.legendItem}>
             <View
               style={[styles.legendColor, { backgroundColor: "#4CAF50" }]}
             />
-            <Text style={styles.legendText}>Life insurance</Text>
+            <Text style={[styles.legendText, { color: "#4CAF50" }]}>
+              Life insurance
+            </Text>
+          </View>
+          <View style={styles.legendItem}>
+            <View
+              style={[styles.legendColor, { backgroundColor: "#005eb8" }]}
+            />
+            <Text style={[styles.legendText, { color: "#005eb8" }]}>Total</Text>
           </View>
         </View>
       </View>
@@ -88,7 +100,7 @@ const styles = StyleSheet.create({
   centerLabel: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#000",
+    color: "#005eb8",
   },
   legendContainer: {
     justifyContent: "center",

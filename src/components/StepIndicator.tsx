@@ -1,0 +1,25 @@
+export const labels = ["Quick Claim", "Submit Claim", "Approved", "Done"];
+
+export const customStyles = {
+  stepIndicatorSize: 20,
+  currentStepIndicatorSize: 25,
+  separatorStrokeWidth: 2,
+  currentStepStrokeWidth: 3,
+  stepStrokeCurrentColor: "#4AA7F5",
+  stepStrokeWidth: 2,
+  stepStrokeFinishedColor: "#4AA7F5",
+  stepStrokeUnFinishedColor: "#ccc",
+  separatorFinishedColor: "#4AA7F5",
+  separatorUnFinishedColor: "#ccc",
+  stepIndicatorFinishedColor: "#4AA7F5",
+  stepIndicatorUnFinishedColor: "#fff",
+  stepIndicatorCurrentColor: "#fff",
+  stepIndicatorLabelFontSize: 10,
+  currentStepIndicatorLabelFontSize: 10,
+  stepIndicatorLabelCurrentColor: "#4AA7F5",
+  stepIndicatorLabelFinishedColor: "#fff",
+  stepIndicatorLabelUnFinishedColor: "#aaa",
+  labelColor: "#666",
+  labelSize: 14,
+  currentStepLabelColor: "#4AA7F5",
+};

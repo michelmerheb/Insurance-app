@@ -19,7 +19,7 @@ import {
 import HomeScreen from "../screens/HomeScreen";
 import OffersScreen from "../screens/OffersScreen";
 import ClaimsScreen from "../screens/ClaimsScreen";
-import PaymentsScreen from "../screens/PaymentsScreen";
+import GetQuoteScreen from "../screens/GetQuoteScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -89,8 +89,10 @@ export default function TabScreens({ navigation }: any) {
               return (
                 <Ionicons name="megaphone-outline" size={size} color={color} />
               );
-            } else if (route.name === "Payments") {
-              return <AntDesign name="creditcard" size={size} color={color} />;
+            } else if (route.name === "New Quote") {
+              return (
+                <AntDesign name="shoppingcart" size={size} color={color} />
+              );
             }
           },
           tabBarActiveTintColor: "#007AFF",
@@ -108,14 +110,33 @@ export default function TabScreens({ navigation }: any) {
           })}
         />
         <Tab.Screen
+          name="Claims"
+          component={ClaimsScreen}
+          options={({ navigation }) => ({
+            header: () => (
+              <TabHeader title="My claims" navigation={navigation} />
+            ),
+          })}
+        />
+        <Tab.Screen
+          name="New Quote"
+          component={GetQuoteScreen}
+          options={({ navigation }) => ({
+            header: () => (
+              <TabHeader
+                title="Get a new insurance quote"
+                navigation={navigation}
+              />
+            ),
+          })}
+        />
+        <Tab.Screen
           name="Offers"
           component={OffersScreen}
           options={({ navigation }) => ({
             header: () => <TabHeader title="Offers" navigation={navigation} />,
           })}
         />
-        <Tab.Screen name="Claims" component={ClaimsScreen} />
-        <Tab.Screen name="Payments" component={PaymentsScreen} />
       </Tab.Navigator>
 
       <TouchableOpacity style={styles.fab} onPress={openModal}>
@@ -150,18 +171,6 @@ export default function TabScreens({ navigation }: any) {
                 <Ionicons name="megaphone-outline" size={30} color="#fff" />
               </TouchableOpacity>
               <Text style={styles.optionText}>Add a claim</Text>
-            </View>
-
-            <View style={styles.optionButtonContainer}>
-              <TouchableOpacity
-                style={styles.optionButton}
-                onPress={() => {
-                  closeModal();
-                }}
-              >
-                <Feather name="shopping-cart" size={30} color="#fff" />
-              </TouchableOpacity>
-              <Text style={styles.optionText}>Get a quote</Text>
             </View>
           </Animated.View>
 

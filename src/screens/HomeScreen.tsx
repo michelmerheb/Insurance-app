@@ -1,12 +1,12 @@
 import React from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import CardComponent from "../components/CardComponent";
+import HomeCard from "../components/HomeCard";
 import DonutChart from "../components/DonutChart";
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      <CardComponent
+      <HomeCard
         iconName="car-outline"
         title="MY CAR INSURANCE"
         detail="BMW 320"
@@ -18,7 +18,7 @@ export default function HomeScreen() {
         buttonColor="#66a9c4"
       />
 
-      <CardComponent
+      <HomeCard
         iconName="heart-outline"
         title="MY HEALTH INSURANCE"
         detail="Class B"
@@ -30,7 +30,7 @@ export default function HomeScreen() {
         buttonColor="#F7B731"
       />
 
-      <CardComponent
+      <HomeCard
         iconName="heart-circle-outline"
         title="MY LIFE INSURANCE"
         detail="Class B"

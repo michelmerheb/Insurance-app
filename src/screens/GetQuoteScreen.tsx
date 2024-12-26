@@ -1,115 +1,99 @@
 import {
-  SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
   View,
-  Image,
-  Dimensions,
+  SafeAreaView,
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import QuoteCard from "../components/QuoteCard";
 
 export default function GetQuoteScreen({ navigation }: any) {
+  const categories = [
+    {
+      title: "Life",
+      iconName: "hand-holding-medical",
+      cardColor: "#2A9D8F",
+      screen: "LifeInsuranceSelection",
+    },
+    {
+      title: "Pet",
+      iconName: "paw",
+      cardColor: "#0d51a3",
+      screen: "PetInformation",
+    },
+    {
+      title: "Medical",
+      iconName: "stethoscope",
+      cardColor: "#66a9c4",
+      screen: "CarInsurance",
+    },
+    {
+      title: "Travel",
+      iconName: "plane-departure",
+      cardColor: "#14c7c7",
+      screen: "CarInsurance",
+    },
+    {
+      title: "Home",
+      iconName: "home",
+      cardColor: "#3691f5",
+      screen: "CarInsurance",
+    },
+    {
+      title: "Car",
+      iconName: "car",
+      cardColor: "#002B7F",
+      screen: "CarInsurance",
+    },
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
-
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <AntDesign name="back" size={24} color="white" />
-      </TouchableOpacity>
-
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Car Insurance</Text>
-        <Image source={require("../assets/sedan.png")} style={styles.image} />
-        <Text style={styles.description}>
-          To get started, we need you to scan the front of your driving license
-          containing your photo ID
-        </Text>
+      <Text style={styles.descriptionText}>
+        Choose one from the below insurance categories to get start
+      </Text>
+      <View style={styles.grid}>
+        {categories.map((category, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.cardWrapper}
+            onPress={() => navigation.navigate(category.screen)}
+          >
+            <QuoteCard
+              title={category.title}
+              iconName={category.iconName}
+              cardColor={category.cardColor}
+            />
+          </TouchableOpacity>
+        ))}
       </View>
-
-      <View style={styles.licenseContainer}>
-        <Image
-          source={require("../assets/driving-license.png")}
-          style={styles.licenseImage}
-        />
-      </View>
-
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>SCAN</Text>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }
 
-const { width, height } = Dimensions.get("window");
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  backButton: {
-    position: "absolute",
-    top: height * 0.01,
-    left: width * 0.01,
-    zIndex: 1,
-    backgroundColor: "#002B7F",
-    padding: 10,
-    borderRadius: 5,
-  },
-  backButtonText: {
-    color: "#fff",
-    fontSize: width * 0.06,
-    fontWeight: "bold",
-  },
-  header: {
-    backgroundColor: "#002B7F",
-    alignItems: "center",
-    padding: height * 0.03,
-  },
-  headerText: {
-    fontSize: width * 0.05,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  image: {
-    width: width * 0.15,
-    height: width * 0.15,
-    marginVertical: height * 0.02,
-  },
-  description: {
-    color: "#fff",
-    paddingHorizontal: width * 0.05,
-    textAlign: "center",
-    fontSize: width * 0.04,
-  },
-  licenseContainer: {
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: height * 0.05,
+    padding: 16,
   },
-  licenseImage: {
-    width: width * 0.9,
-    height: height * 0.4,
-    resizeMode: "contain",
+  descriptionText: {
+    fontSize: 18,
+    textAlign: "center",
+    color: "#666",
+    marginBottom: 40,
   },
-  button: {
-    position: "absolute",
-    bottom: height * 0.03,
-    left: width * 0.1,
-    right: width * 0.1,
-    backgroundColor: "#002B7F",
-    paddingVertical: height * 0.02,
-    alignItems: "center",
-    borderRadius: 5,
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: width * 0.045,
-    fontWeight: "bold",
+  cardWrapper: {
+    width: "45%",
+    aspectRatio: 1,
+    margin: 8,
   },
 });
