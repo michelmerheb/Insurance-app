@@ -10,7 +10,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import TextBox from "../../../components/TextBox";
 import PhoneNumber from "../../../components/PhoneInput";
-import DateOfBirthPicker from "../../../components/DatePicker";
+import DatePicker from "../../../components/DatePicker";
 import InsuranceHeader from "../../../components/InsuranceHeader";
 import CustomPicker from "../../../components/CustomPicker";
 import Button from "../../../components/Button";
@@ -58,7 +58,7 @@ export default function UserDataScreen({ navigation }: any) {
               placeholder="Enter your last name"
             />
             <PhoneNumber value={phoneNumber} onChange={setPhoneNumber} />
-            <DateOfBirthPicker />
+            <DatePicker name="dateOfBirth" />
             <CustomPicker
               name="gender"
               placeholder="Select your gender"

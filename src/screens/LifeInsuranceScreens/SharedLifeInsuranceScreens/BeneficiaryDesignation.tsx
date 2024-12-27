@@ -14,12 +14,12 @@ import type { RootState } from "../../../redux/store";
 import InsuranceHeader from "../../../components/InsuranceHeader";
 import TextBox from "../../../components/TextBox";
 import Button from "../../../components/Button";
-import DateOfBirthPicker from "../../../components/DatePicker";
+import DatePicker from "../../../components/DatePicker";
 
 export default function BeneficiaryDesignation({ navigation }: any) {
   const dispatch = useDispatch();
   const selectedType = useSelector(
-    (state: RootState) => state.insurance.selectedLifeInsuranceType
+    (state: RootState) => state.lifeInsurance.selectedLifeInsuranceType
   );
 
   const validationSchema = Yup.object({
@@ -69,7 +69,11 @@ export default function BeneficiaryDesignation({ navigation }: any) {
             label="Relationship to Policyholder"
             placeholder="Enter the relationship to the policyholder"
           />
-          <DateOfBirthPicker />
+          <DatePicker
+            name="dateOfBirth"
+            title="Date of Birth"
+            label="Date of Birth"
+          />
 
           <TextBox
             name="beneficiaryNumber"

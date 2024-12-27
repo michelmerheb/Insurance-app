@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import TabScreens from "./TabScreens";
-import CarInsuranceScreen from "../screens/CarInsuranceScreen";
+import CarInsuranceScreen from "../screens/CarInsurance/CarInsuranceScreen";
 import LifeInsuranceSelection from "../screens/LifeInsuranceScreens/LifeInsuranceSelection";
 import EligibilityCriteriaScreen from "../screens/LifeInsuranceScreens/SharedLifeInsuranceScreens/EligibilityCriteriaScreen";
 import UserDataScreen from "../screens/LifeInsuranceScreens/TermLifeInsurance/UserDataScreen";
@@ -12,7 +12,13 @@ import EmploymentOccupation from "../screens/LifeInsuranceScreens/SharedLifeInsu
 import CoveragePreferences from "../screens/LifeInsuranceScreens/TermLifeInsurance/CoveragePreferences";
 import PermanentCoveragePreferences from "../screens/LifeInsuranceScreens/PermanentLifeInsurance/PermanentCoveragePreferences";
 import PetInformation from "../screens/PetInsuranceScreens/PetInformation";
-import petDetails from "../screens/PetInsuranceScreens/petDetails";
+import PetDetails from "../screens/PetInsuranceScreens/PetDetails";
+import HomeInformation from "../screens/HomeInsurance/HomeInformation";
+import HomeDetails from "../screens/HomeInsurance/HomeDetails";
+import MedicalInformation from "../screens/MedicalInsurance/MedicalInformation";
+import TravelInformation from "../screens/TravelInsurance/TravelInformation";
+import CameraScreen from "../screens/CarInsurance/CameraScreen";
+import CarInformation from "../screens/CarInsurance/CarInformation";
 
 const Stack = createStackNavigator();
 
@@ -56,7 +62,13 @@ export default function StackScreens() {
         component={PermanentCoveragePreferences}
       />
       <Stack.Screen name="PetInformation" component={PetInformation} />
-      <Stack.Screen name="PetDetails" component={petDetails} />
+      <Stack.Screen name="PetDetails" component={PetDetails} />
+      <Stack.Screen name="HomeInformation" component={HomeInformation} />
+      <Stack.Screen name="HomeDetails" component={HomeDetails} />
+      <Stack.Screen name="MedicalInformation" component={MedicalInformation} />
+      <Stack.Screen name="TravelInformation" component={TravelInformation} />
+      <Stack.Screen name="Camera" component={CameraScreen} />
+      <Stack.Screen name="CarInformation" component={CarInformation} />
     </Stack.Navigator>
   );
 }

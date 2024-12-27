@@ -44,8 +44,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   title: {
-    fontSize: 20,
+    fontSize: 25,
     color: "#1A2A6C",
     flex: 1,
+    fontWeight: "bold",
   },
 });

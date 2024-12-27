@@ -3,17 +3,17 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useFormikContext } from "formik";
 
-interface DatePickerProps {
-  name: string; // Field name for Formik
-  title?: string; // Placeholder for unselected date
-  label?: string; // Label for the selected date
+interface FutureDatePickerProps {
+  name: string;
+  title?: string;
+  label?: string;
 }
 
-export default function DatePicker({
+export default function FutureDatePicker({
   name,
   title = "Select date",
   label = "Selected Date",
-}: DatePickerProps) {
+}: FutureDatePickerProps) {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const { values, setFieldValue, touched, errors } = useFormikContext<any>();
 
@@ -41,7 +41,7 @@ export default function DatePicker({
           value={values[name] ? new Date(values[name]) : new Date()}
           mode="date"
           display="default"
-          maximumDate={new Date()}
+          minimumDate={new Date()}
           onChange={(event, selectedDate) => {
             setShowDatePicker(false);
             if (event.type === "set" && selectedDate) {

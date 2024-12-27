@@ -26,19 +26,19 @@ export default function GetQuoteScreen({ navigation }: any) {
       title: "Medical",
       iconName: "stethoscope",
       cardColor: "#66a9c4",
-      screen: "CarInsurance",
+      screen: "MedicalInformation",
     },
     {
       title: "Travel",
       iconName: "plane-departure",
       cardColor: "#14c7c7",
-      screen: "CarInsurance",
+      screen: "TravelInformation",
     },
     {
       title: "Home",
       iconName: "home",
       cardColor: "#3691f5",
-      screen: "CarInsurance",
+      screen: "HomeInformation",
     },
     {
       title: "Car",

@@ -13,7 +13,7 @@ import TextBox from "../../components/TextBox";
 import CustomPicker from "../../components/CustomPicker";
 import Button from "../../components/Button";
 
-export default function petDetails({ navigation }: any) {
+export default function PetDetails({ navigation }: any) {
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object({

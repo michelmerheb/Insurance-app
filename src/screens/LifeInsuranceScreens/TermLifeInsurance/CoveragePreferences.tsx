@@ -12,7 +12,7 @@ import { handleSubmitUtility } from "../../../utility/handleSubmitUtility";
 export default function CoveragePreferences({ navigation }: any) {
   const dispatch = useDispatch();
   const selectedType = useSelector(
-    (state: RootState) => state.insurance.selectedLifeInsuranceType
+    (state: RootState) => state.lifeInsurance.selectedLifeInsuranceType
   );
 
   const validationSchema = Yup.object({

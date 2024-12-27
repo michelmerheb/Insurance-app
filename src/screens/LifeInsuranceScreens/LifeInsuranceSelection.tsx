@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   backButton: {
-    top: 0,
+    top: 40,
+    left: 10,
     padding: 8,
   },
   header: {

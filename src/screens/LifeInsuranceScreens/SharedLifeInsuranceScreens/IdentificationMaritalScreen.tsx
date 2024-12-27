@@ -13,7 +13,7 @@ import InsuranceHeader from "../../../components/InsuranceHeader";
 export default function IdentificationMarital({ navigation }: any) {
   const dispatch = useDispatch();
   const selectedType = useSelector(
-    (state: RootState) => state.insurance.selectedLifeInsuranceType
+    (state: RootState) => state.lifeInsurance.selectedLifeInsuranceType
   );
 
   const validationSchema = Yup.object({

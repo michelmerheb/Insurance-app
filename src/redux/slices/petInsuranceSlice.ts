@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { resetInsuranceType } from "./lifeInsuranceSlice";
 
 interface PetInformation {
     petName: string;
