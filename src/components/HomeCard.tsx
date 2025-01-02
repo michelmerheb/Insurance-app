@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -5,9 +6,8 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { ProgressBar } from "react-native-paper";
+import { Bar } from "react-native-progress";
 
 interface HomeCardProps {
   iconName: keyof typeof Ionicons.glyphMap;
@@ -32,6 +32,22 @@ export default function HomeCard({
   progressColor = "#4CAF50",
   buttonColor = "#4CAF50",
 }: HomeCardProps) {
+  const [animatedProgress, setAnimatedProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimatedProgress((prev) => {
+        if (prev >= progress) {
+          clearInterval(interval);
+          return progress;
+        }
+        return prev + 0.05;
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [progress]);
+
   return (
     <View style={styles.container}>
       <View style={styles.cardHeader}>
@@ -45,11 +61,19 @@ export default function HomeCard({
       </View>
 
       <View style={styles.progressButtonContainer}>
-        <View style={styles.progressBarContainer}>
-          <ProgressBar
-            animatedValue={progress}
+        <View
+          style={[
+            styles.progressBarContainer,
+            { backgroundColor: "#E0E0E0", borderRadius: 5 },
+          ]}
+        >
+          <Bar
+            progress={animatedProgress}
+            width={null}
+            height={12}
             color={progressColor}
-            style={styles.progressBar}
+            borderRadius={5}
+            borderWidth={0}
           />
         </View>
         <TouchableOpacity
@@ -117,12 +141,6 @@ const styles = StyleSheet.create({
   progressBarContainer: {
     flex: 1,
     marginRight: 10,
-  },
-  progressBar: {
-    height: 12,
-    borderRadius: 5,
-    marginVertical: 10,
-    width: "100%",
   },
   button: {
     paddingVertical: 6,

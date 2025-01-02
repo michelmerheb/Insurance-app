@@ -66,6 +66,7 @@ export default function CarInformation({ navigation }: any) {
               name="carYear"
               label="What year is your car?"
               placeholder="Enter your car's year"
+              keyboardType="numeric"
             />
 
             <CustomPicker
@@ -100,7 +101,7 @@ export default function CarInformation({ navigation }: any) {
               keyboardType="numeric"
             />
 
-            <Button title="Get a quote" onPress={handleSubmit} />
+            <Button title="Get my quote" onPress={handleSubmit} />
           </ScrollView>
         </SafeAreaView>
       )}

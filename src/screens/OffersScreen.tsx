@@ -42,7 +42,6 @@ export default function OffersScreen({ navigation }: any) {
         secondNumber="40%"
         secondLabel="Bought it"
         description="Car Insurance"
-        onPress={() => navigation.navigate("CarInsurance")}
       />
 
       <OfferCard

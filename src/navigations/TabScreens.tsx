@@ -30,7 +30,7 @@ const TabHeader = ({ title, navigation }: any) => {
         <AntDesign name="user" size={24} color="#fff" />
       </TouchableOpacity>
       <Text style={styles.headerTitle}>{title}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate("Notifications")}>
+      <TouchableOpacity>
         <Ionicons name="notifications-outline" size={24} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>

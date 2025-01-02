@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import React from "react";
+import React, { useState } from "react";
 import { useFormikContext } from "formik";
 
 interface CustomPickerProps {
@@ -15,6 +15,7 @@ export default function CustomPicker({
   placeholder = "Select an option",
 }: CustomPickerProps) {
   const { values, touched, errors, setFieldValue } = useFormikContext<any>();
+  const [isPickerFocused, setPickerFocused] = useState(false);
 
   return (
     <View style={styles.wrapper}>
@@ -23,8 +24,10 @@ export default function CustomPicker({
           selectedValue={values[name]}
           onValueChange={(itemValue) => setFieldValue(name, itemValue)}
           style={styles.picker}
+          onFocus={() => setPickerFocused(true)}
+          onBlur={() => setPickerFocused(false)}
         >
-          <Picker.Item label={placeholder} value={null} />
+          {!isPickerFocused && <Picker.Item label={placeholder} value={null} />}
           {options.map((option, index) => (
             <Picker.Item
               key={index}
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     borderColor: "gray",
   },
   picker: {
-    color: "#555",
+    color: "#1A2A6C",
   },
   errorText: {
     color: "red",

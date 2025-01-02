@@ -36,7 +36,7 @@ export default function HomeDetails({ navigation }: any) {
     >
       {({ handleSubmit }) => (
         <SafeAreaView style={styles.container}>
-          <InsuranceHeader title="Home Insurance" navigation={navigation} />
+          <InsuranceHeader title="Home Address" navigation={navigation} />
           <TextBox
             name="homeAddress"
             placeholder="Home Address"

@@ -61,7 +61,7 @@ export default function CoveragePreferences({ navigation }: any) {
               { label: "30 years", value: "30" },
             ]}
           />
-          <Button title="Continue" onPress={handleSubmit} />
+          <Button title="Get my quote" onPress={handleSubmit} />
         </SafeAreaView>
       )}
     </Formik>

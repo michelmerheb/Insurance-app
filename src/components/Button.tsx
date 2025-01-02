@@ -4,11 +4,19 @@ import React from "react";
 interface ButtonProps {
   title: string;
   onPress: () => void;
+  buttonColor?: string;
 }
 
-export default function Button({ title, onPress }: ButtonProps) {
+export default function Button({
+  title,
+  onPress,
+  buttonColor = "#1A2A6C",
+}: ButtonProps) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.button, { backgroundColor: buttonColor }]}
+      onPress={onPress}
+    >
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );

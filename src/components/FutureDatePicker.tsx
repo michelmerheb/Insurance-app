@@ -17,9 +17,10 @@ export default function FutureDatePicker({
   const [showDatePicker, setShowDatePicker] = useState(false);
   const { values, setFieldValue, touched, errors } = useFormikContext<any>();
 
-  const selectedDateText = values[name]
-    ? `${label}: ${new Date(values[name]).toLocaleDateString()}`
-    : title;
+  const selectedDateText =
+    values[name] && values[name] !== ""
+      ? `${label}: ${new Date(values[name]).toLocaleDateString()}`
+      : title;
 
   return (
     <View style={styles.container}>
@@ -46,6 +47,8 @@ export default function FutureDatePicker({
             setShowDatePicker(false);
             if (event.type === "set" && selectedDate) {
               setFieldValue(name, selectedDate.toISOString().split("T")[0]);
+            } else {
+              setFieldValue(name, "");
             }
           }}
         />
@@ -67,7 +70,7 @@ const styles = StyleSheet.create({
   },
   datePickerText: {
     fontSize: 16,
-    color: "#555",
+    color: "#1A2A6C",
   },
   errorText: {
     color: "red",

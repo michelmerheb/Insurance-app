@@ -79,7 +79,7 @@ export default function CoveragePreferences({ navigation }: any) {
               },
             ]}
           />
-          <Button title="Continue" onPress={handleSubmit} />
+          <Button title="Get my quote" onPress={handleSubmit} />
         </SafeAreaView>
       )}
     </Formik>

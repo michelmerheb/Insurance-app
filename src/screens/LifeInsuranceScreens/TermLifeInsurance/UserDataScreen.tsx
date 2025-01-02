@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import TextBox from "../../../components/TextBox";
@@ -16,7 +10,7 @@ import CustomPicker from "../../../components/CustomPicker";
 import Button from "../../../components/Button";
 
 export default function UserDataScreen({ navigation }: any) {
-  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),

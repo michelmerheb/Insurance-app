@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   datePickerText: {
     fontSize: 16,
-    color: "#555",
+    color: "#1A2A6C",
   },
   errorText: {
     color: "red",

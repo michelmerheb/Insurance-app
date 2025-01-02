@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import TabScreens from "./TabScreens";
+import ProfileScreen from "../screens/ProfileScreen";
 import CarInsuranceScreen from "../screens/CarInsurance/CarInsuranceScreen";
 import LifeInsuranceSelection from "../screens/LifeInsuranceScreens/LifeInsuranceSelection";
 import EligibilityCriteriaScreen from "../screens/LifeInsuranceScreens/SharedLifeInsuranceScreens/EligibilityCriteriaScreen";
@@ -30,6 +31,7 @@ export default function StackScreens() {
     >
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="TabScreens" component={TabScreens} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="CarInsurance" component={CarInsuranceScreen} />
       <Stack.Screen
         name="LifeInsuranceSelection"

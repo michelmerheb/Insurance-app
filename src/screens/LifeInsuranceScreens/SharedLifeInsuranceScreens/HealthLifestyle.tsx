@@ -77,8 +77,7 @@ export default function HealthLifestyle({ navigation }: any) {
             <TextBox
               name="alcohol"
               label="Alcohol Consumption"
-              placeholder="Enter your alcohol consumption"
-              keyboardType="numeric"
+              placeholder="e.g., once a week, never)"
             />
             <TextBox
               name="medicalHistory"

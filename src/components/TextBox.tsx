@@ -24,6 +24,8 @@ export default function TextBox({
         onChangeText={(text) => setFieldValue(name, text)}
         style={styles.input}
         mode="outlined"
+        textColor="#1A2A6C"
+        theme={{ colors: { primary: "#1A2A6C" } }}
         placeholder={placeholder}
         keyboardType={keyboardType}
       />
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderRadius: 10,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
   },
   errorText: {
     color: "red",
